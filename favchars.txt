@@ -1,0 +1,29 @@
+In Vim got to Insert mode "I" then hit CTRL+Q then SHIFT+U then hex unicode.
+You need to have a Nerd Font installed.
+
+  Hex: e0C7
+  Hex: f423
+  Hex: f085
+
+ Gears grinding data. :)
+
+Others:
+󱓲  Wheelbarrow   f14f2
+󱍼  Traffic cone  f137c
+󰢛  Anvil    f089b
+  Bug    eaaf
+  Fire   eaf2
+  Rocket f427
+  Tree   e21c
+  Chain  f0c1
+󰔽  Truck  53d
+󰽥  Moon   0f65
+  Moon   f186
+  Triangle Right eb70
+  Left Halfmoon e0b6
+  Right Halfmoon e0b4
+
+▄︻╦デ╤一
+
+
+

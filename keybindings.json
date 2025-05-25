@@ -1,0 +1,145 @@
+//VSCode User keybindings.  
+//Location: /username/appdata/roaming/code/user/keybindings.json
+//
+//Also really like to use:
+//CTRL+k CTRL+0 to collapse to functions.
+//CTRL+k CTRL+j to expand all collapsed regions.
+
+// Place your key bindings in this file to override the defaultsauto[]
+[    
+    {
+        "key": "alt+h",
+        "command": "cursorLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "cursorDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+k",
+        "command": "cursorUp",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+n",
+        "command": "cursorWordStartLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+m",
+        "command": "cursorWordEndRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+l",
+        "command": "cursorRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+[",
+        "command": "cursorPageDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+]",
+        "command": "cursorPageUp",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+'",
+        "command": "cursorEnd",
+        "when": "textInputFocus"
+    },    
+    {
+        "key": "alt+;",
+        "command": "cursorHome",
+        "when": "textInputFocus"
+    },    
+    {
+        "key": "alt+,",
+        "command": "deleteLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+.",
+        "command": "deleteRight",
+        "when": "textInputFocus"
+    },
+
+    {
+        "key": "shift+alt+l",
+        "command": "cursorRightSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+alt+h",
+        "command": "cursorLeftSelect",
+        "when": "textInputFocus"
+    },    
+    {
+        "key": "shift+alt+n",
+        "command": "cursorWordStartLeftSelect",
+        "when": "textInputFocus"
+    },    
+    {
+        "key": "shift+alt+m",
+        "command": "cursorWordEndRightSelect",
+        "when": "textInputFocus"
+    },    
+    {
+        "key": "shift+alt+k",
+        "command": "cursorUpSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+alt+j",
+        "command": "cursorDownSelect",
+        "when": "textInputFocus"
+    },
+    
+    {
+        "key": "shift+alt+[",
+        "command": "cursorPageDownSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+alt+]",
+        "command": "cursorPageUpSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+alt+'",
+        "command": "cursorEndSelect",
+        "when": "textInputFocus"
+    },    
+    {
+        "key": "shift+alt+;",
+        "command": "cursorHomeSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key":"alt+t",
+        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key":"alt+t",
+        "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "alt+i",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "alt+u",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "-dart.openDevTools",
+        "when": "dart-code:anyProjectLoaded"
+    }
+]

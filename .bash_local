@@ -1,0 +1,7 @@
+callsign="$(make8_color "45")\u @ \h "
+icon="$(make8_color "124")>>->>"
+curpath="$(make8_color "130")"
+prompt="$(make8_color "27")"
+
+export PATH=$PATH:/usr/local/go/bin
+export TMUX_PLUGIN_MANAGER_PATH="~/programs/tpm"

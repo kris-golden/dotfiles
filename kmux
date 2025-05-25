@@ -1,0 +1,15 @@
+#!/bin/bash
+# Launch tmux with default pane layout.
+tmux new-session -s kmux -d \; \
+split-window -h \; \
+split-window -v \; \
+resize-pane -t 0 -R 20 \; \
+resize-pane -t 1 -D 5 \; \
+attach
+
+
+
+
+
+
+

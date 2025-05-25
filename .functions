@@ -1,0 +1,112 @@
+
+# Display all colors available to the command line.
+colors() {
+   for code in {0..255}
+      do echo -e "\e[38;5;${code}m"'\\e[38;5;'"$code"m"\e[0m"
+   done   
+}
+
+# Recursive check git status on any folders that have a ./.git subfolder.
+# If a folder has the ./git sub, do not recurse further down.
+gitstatus() {
+   # for d in *; do 
+   #    [[ -d $d/.git ]] && pushd $d && git status -s && popd>/dev/null; 
+   # done;
+   
+   # First check current folder, process then stop here if it is a git repo.
+   cf=$(pwd)
+   if [[ -d $cf/.git ]]; then
+      echo $(make8_color "2")$(pwd)$(reset_color)
+      git status -s
+   else
+      for f in *; do
+         if [[ -d $f/.git ]]; then #If folder/.git exists, get status.
+            pushd $f>/dev/null
+            echo $(make8_color "2")$(pwd)$(reset_color)
+            git status -s
+            popd>/dev/null
+         elif [[ -d $f ]]; then #Else if it's a regular folder (not a file) recurse.
+            echo $(pwd) $(make8_color "130")'->'$(reset_color)
+            pushd $f>/dev/null
+            gitstatus
+            popd>/dev/null
+         fi
+      done
+   fi
+}
+
+# Runs Git to commit and push changes in currnet folder.  Will use a generic comment if not provided.
+gititin() {
+   echo 'Committing changes in current folder, with provided comment (default: updated)'
+   arg1='gititin - updated'
+   if [ "$1" != "" ]; then
+      arg1=$1
+   fi
+
+   git add .
+   git commit -m "$arg1"
+   git push
+}
+
+# Runs Git to commit and push changes to the documents folder with a generic comment.
+gitdocsin() {
+   echo 'Committing all changes to documents'
+   pushd .
+   cd ~/dev/documents
+   git add .
+   git commit -m 'gitdocsin - updated'
+   git push
+   popd
+}
+
+# Returns some useful dynamic system info.  I use primarily for system temp.
+sysinfo() {
+   echo "This may only work on certain Ubuntu installs..."
+   
+   /usr/bin/landscape-sysinfo
+}
+
+# Make colors for bash prompts.
+make_color () {
+   local newColor="\\e[38;2;$1;$2;$3"'m'
+   echo -e "$newColor"
+}
+make_bgcolor () {
+   local newColor="\\e[48;2;$1;$2;$3"'m'
+   echo -e "$newColor"
+}
+reset_color () {
+	local nullColor="\\e[0m"
+	echo -e "$nullColor"
+}
+
+
+make8_color () {
+   local newColor="\\e[38;5;$1"'m'
+   echo -e "$newColor"
+}
+make8_bgcolor () {
+   local newColor="\\e[48;5;$1"'m'
+   echo -e "$newColor"
+
+}
+
+swappath="/home/kris"
+
+swp () {
+   arg1=$1
+   arg1=${#arg1}
+#   echo $arg1
+
+   if [ $arg1 -gt 0 ]; then
+      swappath=$(pwd)
+#      pwd    
+      cd $1
+   else
+      swap=$(pwd)
+      cd $swappath
+      swappath=$swap
+   fi
+
+   echo $swappath
+}

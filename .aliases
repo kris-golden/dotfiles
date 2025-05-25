@@ -1,0 +1,62 @@
+# Reevaluate regular commands
+alias mv="mv -v"
+alias cp="cp -v"
+alias nano="nano -c"
+alias path='echo -e ${PATH//:/\\n}' # Print each PATH on separate lines.
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias gobin='./~/programs/go/bin/$1' # is this needed?!?
+
+# Navigation Helpers
+alias ..="cd .."
+alias cd..="cd .."
+alias cd...="cd ../.."
+alias cd....="cd ../../.."
+
+# cd Aliases
+alias aka="cat ~/dev/documents/dotfiles/.aliases | more" # output this file
+alias h="cd ~"
+alias d="cd ~/dev"
+alias dc="cd ~/dev/clients"
+alias dl="cd ~/dev/libs"
+alias ds="cd ~/dev/services"
+alias p="cd ~/programs"
+alias dep="cd ~/depot"
+alias dot="cd ~/.dotfiles"
+alias doc="cd ~/dev/documents"
+alias k="cd ~ && ./kmux"
+alias localip="hostname -I"
+alias myip="curl ipinfo.io/ip"
+
+# ls Aliases
+alias ls='ls --color=auto'
+alias ll="ls -Al --group-directories-first" # show dot files groups first, don't bother with . and ..
+alias l="ls -l --group-directories-first"    # show non-hidden files/dirs, groups first.
+
+# Git Shortcuts
+alias g="git"
+alias gs="gitstatus"
+alias ga="git add ."
+alias gc="git commit -m "
+alias gls="git ls-files" # returns list of files in current folder git repo
+alias gp="git push" 
+alias gii='gititin' # function that runs git add -> commit with comment "$1" -> push
+alias gdi='gitdocsin' # function like gititin but runs on documents dir with generic comment
+
+# Docker
+alias dk="cd ~/dev/docker"
+alias dkc="cd ~/dev/docker/containers"
+alias dkd="docker compose down"
+alias dku="docker compose up -d"
+alias dkl="docker ps --format '\n----------------\nName: {{.Names}}\n----------------\nID:{{.ID}}\nImage: {{.Image}} \nStatus: {{.Status}}\nSize: {{.Size}}\nNetworks: {{.Networks}}\nCommand: {{.Command}} \nPorts: {{.Ports}}'"
+alias dkll="docker ps -a --format 'table {{.Names}}\t{{.Status}}\t{{.Image}}\t\t{{.Size}}\t{{.Command}}'"
+
+# Python
+alias py="python3.13"
+alias pya="source ./.venv/bin/activate" #activate virtual environment if in this dir
+alias pyd="deactivate" #deactivate current virtual environment from wherever
+

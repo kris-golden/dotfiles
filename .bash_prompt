@@ -1,0 +1,63 @@
+#!/usr/bin/bash
+
+# Modified from https://github.com/mathiasbynens/dotfiles/blob/main/.bash_prompt
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+	export TERM='gnome-256color';
+elif infocmp xterm-256color >/dev/null 2>&1; then
+	export TERM='xterm-256color';
+fi;
+
+# Set some colors. 
+reset="$(reset_color)"
+source ~/.dotfiles/.bash_local #get unique colors for each system (do not track this file)
+#e.g. callsign="$(make8_color "99")"
+
+
+# Set the prompt.
+PS1="${reset}\n"
+PS1+="${callsign} "
+PS1+="${reset}"
+PS1+="${icon}   "
+PS1+="${curpath}\w"; # working directory full path
+PS1+="${reset}\n"
+PS1+="${prompt}\D{%D} \t >"
+PS1+="${reset}"; 
+export PS1;
+
+PS2="\[${prompt}\]→ ${reset}";
+export PS2;
+
+# cyan="$(make8_color "27")" # "0" "100" "200")"
+# bgCyan="$(make8_bgcolor "27")"
+# green="$(make8_color "28")" # "100" "200" "0")"  #$(tput setaf $usercolor);
+# bgGreen="$(make8_bgcolor "28")" 
+# blue="$(make8_color "18")"
+# bgBlue="$(make8_bgcolor "18")"
+# orange="$(make8_color "130")"
+# bgOrange="$(make8_bgcolor "130")"
+
+# greenblue="${green}${bgBlue}" #$(make_bgcolor "0" "0" "100")"
+# eggplant=$(tput setaf 111)
+# blueorange="${blue}${bgOrange}"
+# orangecyan="${orange}${bgCyan}"
+# cyangreen="${cyan}${bgGreen}"
+
+# Set the prompt.
+#PS1="${reset}\n"
+#PS1+="${blue}"
+#PS1+="${callsign}\u@\h "
+#PS1+="${reset}"
+#PS1+="${blueorange}"
+#PS1+="${orangecyan}"
+#PS1+="${cyangreen}"
+#PS1+="${reset}"
+#PS1+="${cyan}"
+#PS1+="${icon} "
+#PS1+="${curpath}\w"; # working directory full path
+#PS1+="${reset}\n"
+#PS1+="${prompt}\D{%D} \t >"
+#PS1+="${reset}"; 
+#export PS1;
+
+#PS2="\[${prompt}\]→ ${reset}";
+#export PS2;

@@ -1,4 +1,42 @@
 
+# Docker child dependencies of passed in image id.
+docker_depends() { 
+    echo $(docker images --format "{{.Repository}}:{{.Tag}} - {{.ID}}" | grep $1)
+
+    for z in $(get_docker_depends_ids $1) 
+    do
+        if [[ $z != $1 ]]; then
+            echo "    " $(make8_color "172")$(docker images --format "{{.Repository}}:{{.Tag}} - {{.ID}}" | grep $z)$(reset_color)
+        fi
+    done
+}
+
+# Lists Docker image ids that are children (or self) of passed in id.
+get_docker_depends_ids() {
+    for i in $(docker images -q)
+    do
+        docker history $i | grep -q $1 && echo $i
+    done | sort -u
+}
+# Returns all top-level docker images and their dependent images.
+docker_depends_all() {
+    echo ""
+    echo "Docker Image Dependencies"
+    echo ""
+
+    for i in $(docker images -q)
+    do
+        docker_depends $i
+        echo ""
+        #echo $(docker images --format "{{.Repository}}:{{.Tag}}\t{{.ID}}"  | grep $i):
+        #for n in $(docker_depends $i)
+        #do
+        #    echo " " $(make8_color "172")$(docker images --format "{{.Repository}}:{{.Tag}}\t\t{{.ID}}"  | grep $n)$(reset_color)                
+        #done
+
+    done
+}
+
 # Display all colors available to the command line.
 colors() {
    for code in {0..255}

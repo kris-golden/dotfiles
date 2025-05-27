@@ -1,7 +1,7 @@
 # Reevaluate regular commands
 alias mv="mv -v"
 alias cp="cp -v"
-alias nano="nano -c"
+alias nano="nano -c -E -T 4"
 alias path='echo -e ${PATH//:/\\n}' # Print each PATH on separate lines.
 
 # Always enable colored `grep` output
@@ -53,7 +53,8 @@ alias dkc="cd ~/dev/docker/containers"
 alias dkd="docker compose down"
 alias dku="docker compose up -d"
 alias dkl="docker ps --format '\n----------------\nName: {{.Names}}\n----------------\nID:{{.ID}}\nImage: {{.Image}} \nStatus: {{.Status}}\nSize: {{.Size}}\nNetworks: {{.Networks}}\nCommand: {{.Command}} \nPorts: {{.Ports}}'"
-alias dkll="docker ps -a --format 'table {{.Names}}\t{{.Status}}\t{{.Image}}\t\t{{.Size}}\t{{.Command}}'"
+alias dkll="docker ps -a --format 'table {{.Names}}\t{{.Status}}\t{{.Image}}'"
+alias dkda="docker_depends_all"
 
 # Python
 alias py="python3.13"

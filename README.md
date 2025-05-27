@@ -1,5 +1,5 @@
 # dotfiles
----
+
 This is my regularly used set of dotfiles, configs, and settings.
 
   * ***.aliases*** - lists all of my keyboard shortcuts.  It may call a function too.   
@@ -16,3 +16,4 @@ Handy functions used to provide more advanced functionality and colors for the p
   * make_color() & make8_color: makes a color that can be used with outputed text.  make_color takes 3 params (rgb), make8_color takes a color 0-255.  (see colors() function).
   * gititin() - quickly adds all changed files, commits them with a default or passed in comment, and pushes them to the default origin and current branch.
   * gitstatus() - when run from a common parent folder, will dive into each subfolder and provide current git status for any repos that exist.
+  * swp() - will store current folder name and change to passed in folder. Subsequent calls to swap will toggle between both folders.  Quicker than using pushd and popd when swapping between two folders.

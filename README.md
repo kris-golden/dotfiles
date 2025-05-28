@@ -13,7 +13,7 @@ This is my regularly used set of dotfiles, configs, and settings.
 ---
 Handy functions used to provide more advanced functionality and colors for the prompt.  Most of these have an alias to quickly run.
 
-  * docker_depends_all() - outputs each images listed with `docker images` command.  It makes use of functions docker_depends() and get_docker_depends_ids().
+  * docker_depends_all() - outputs each image listed with the `docker images` command.  It makes use of functions docker_depends() and get_docker_depends_ids().
   * colors() - displays all 256 8-bit colors available.
   * make_color() & make8_color: makes a color that can be used with outputed text.  make_color takes 3 params (rgb), make8_color takes a color 0-255.  (see colors() function).
   * make_bgcolor() & make8_bgcolor: sames as make_color functions, but for background colors.
